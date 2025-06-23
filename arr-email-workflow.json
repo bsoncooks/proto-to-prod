@@ -1,0 +1,83 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "379b39b2-9650-4db8-b119-def5c35c8a90",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b5f04db0-d653-4f7a-839c-976f031b9fe1",
+      "name": "Webhook",
+      "webhookId": "379b39b2-9650-4db8-b119-def5c35c8a90"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ],
+      "id": "853a662f-1f01-4700-a164-34bfb0465cce",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        440,
+        0
+      ],
+      "id": "287d9785-3b07-40b6-89bd-98cea9ece57b",
+      "name": "Send Email",
+      "webhookId": "8db441c4-6faf-4ffd-a73f-c1ca1d2fadee"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9ff11b61-7e37-4eac-813d-53c6fbb4946d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "31040882f0bf9df2853c9e267bf96a5b65469d1880e07ec5dcae59188271be45"
+  },
+  "id": "MDB2DhLKOEfFewVD",
+  "tags": []
+}
